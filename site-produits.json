@@ -1,0 +1,227 @@
+{
+ "settings": {
+  "shipping_default": "600",
+  "free_above": "0",
+  "shipping_overrides": "16=400\n31=500",
+  "whatsapp": "",
+  "banner_title": "Tout ce qu'il vous faut, livré chez vous",
+  "banner_text": "Des milliers d'articles, des prix en DA et le paiement à la livraison partout en Algérie."
+ },
+ "categories": [
+  {
+   "id": 1,
+   "name": "Téléphonie",
+   "icon": "📱"
+  },
+  {
+   "id": 2,
+   "name": "Électronique",
+   "icon": "🎧"
+  },
+  {
+   "id": 3,
+   "name": "Mode",
+   "icon": "👕"
+  },
+  {
+   "id": 4,
+   "name": "Chaussures",
+   "icon": "👟"
+  },
+  {
+   "id": 5,
+   "name": "Beauté",
+   "icon": "💄"
+  },
+  {
+   "id": 6,
+   "name": "Maison & Cuisine",
+   "icon": "🏠"
+  },
+  {
+   "id": 7,
+   "name": "Auto",
+   "icon": "🚗"
+  },
+  {
+   "id": 8,
+   "name": "Sport",
+   "icon": "🏋️"
+  },
+  {
+   "id": 9,
+   "name": "Jouets & Cadeaux",
+   "icon": "🎁"
+  }
+ ],
+ "products": [
+  {
+   "id": 12,
+   "name": "Coffret cadeau enfant",
+   "description": "Jouets éducatifs assortis.",
+   "price": 3500,
+   "promo_price": 2900,
+   "stock": 12,
+   "category_id": 9,
+   "image": "",
+   "popular": 1,
+   "sold": 15,
+   "demo": 1,
+   "created_at": "2026-10-13 19:38:02"
+  },
+  {
+   "id": 11,
+   "name": "Ballon de football",
+   "description": "Taille 5, usage loisir.",
+   "price": 2500,
+   "promo_price": 0,
+   "stock": 25,
+   "category_id": 8,
+   "image": "",
+   "popular": 0,
+   "sold": 18,
+   "demo": 1,
+   "created_at": "2026-10-13 19:38:02"
+  },
+  {
+   "id": 10,
+   "name": "Support téléphone voiture",
+   "description": "Fixation grille d'aération.",
+   "price": 1200,
+   "promo_price": 900,
+   "stock": 50,
+   "category_id": 7,
+   "image": "",
+   "popular": 0,
+   "sold": 60,
+   "demo": 1,
+   "created_at": "2026-10-13 19:38:02"
+  },
+  {
+   "id": 9,
+   "name": "Lampe de décoration LED",
+   "description": "Ambiance chaleureuse pour le salon.",
+   "price": 3200,
+   "promo_price": 0,
+   "stock": 18,
+   "category_id": 6,
+   "image": "",
+   "popular": 0,
+   "sold": 22,
+   "demo": 1,
+   "created_at": "2026-10-13 19:38:02"
+  },
+  {
+   "id": 8,
+   "name": "Set de casseroles",
+   "description": "5 pièces antiadhésives.",
+   "price": 9500,
+   "promo_price": 8500,
+   "stock": 8,
+   "category_id": 6,
+   "image": "",
+   "popular": 1,
+   "sold": 28,
+   "demo": 1,
+   "created_at": "2026-10-13 19:38:02"
+  },
+  {
+   "id": 7,
+   "name": "Sérum visage",
+   "description": "Hydratation et éclat.",
+   "price": 2800,
+   "promo_price": 0,
+   "stock": 30,
+   "category_id": 5,
+   "image": "",
+   "popular": 0,
+   "sold": 33,
+   "demo": 1,
+   "created_at": "2026-10-13 19:38:02"
+  },
+  {
+   "id": 6,
+   "name": "Baskets confort",
+   "description": "Semelle légère pour tous les jours.",
+   "price": 5500,
+   "promo_price": 4900,
+   "stock": 20,
+   "category_id": 4,
+   "image": "",
+   "popular": 1,
+   "sold": 55,
+   "demo": 1,
+   "created_at": "2026-10-13 19:38:02"
+  },
+  {
+   "id": 5,
+   "name": "T-shirt coton homme",
+   "description": "Coupe classique, plusieurs tailles.",
+   "price": 1800,
+   "promo_price": 1500,
+   "stock": 60,
+   "category_id": 3,
+   "image": "",
+   "popular": 1,
+   "sold": 70,
+   "demo": 1,
+   "created_at": "2026-10-13 19:38:02"
+  },
+  {
+   "id": 4,
+   "name": "Enceinte portable",
+   "description": "Son puissant, résistante aux éclaboussures.",
+   "price": 6000,
+   "promo_price": 0,
+   "stock": 10,
+   "category_id": 2,
+   "image": "",
+   "popular": 0,
+   "sold": 40,
+   "demo": 1,
+   "created_at": "2026-10-13 19:38:02"
+  },
+  {
+   "id": 3,
+   "name": "Écouteurs Bluetooth",
+   "description": "Autonomie 20h, boîtier de charge.",
+   "price": 4500,
+   "promo_price": 3800,
+   "stock": 15,
+   "category_id": 2,
+   "image": "",
+   "popular": 1,
+   "sold": 80,
+   "demo": 1,
+   "created_at": "2026-10-13 19:38:02"
+  },
+  {
+   "id": 2,
+   "name": "Chargeur rapide 25W",
+   "description": "Chargeur USB-C avec câble.",
+   "price": 2200,
+   "promo_price": 0,
+   "stock": 25,
+   "category_id": 1,
+   "image": "",
+   "popular": 1,
+   "sold": 95,
+   "demo": 1,
+   "created_at": "2026-10-13 19:38:02"
+  },
+  {
+   "id": 1,
+   "name": "Coque de protection téléphone",
+   "description": "Coque antichoc transparente.",
+   "price": 900,
+   "promo_price": 700,
+   "stock": 40,
+   "category_id": 1,
+   "image": "",
+   "popular": 1,
+   "sold": 120,
+   "demo": 1,
+   "created_at": "2026-10-13 19:38:02"
+  }
+ ]
+}
