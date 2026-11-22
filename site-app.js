@@ -10,7 +10,7 @@ const cat = id => S.categories.find(c => c.id === id);
 const pid = id => S.products.find(p => p.id === parseInt(id));
 const PH = '<span class="phx">Photo<br>à venir</span>';
 const vt = i => { const v = String(i).split('~')[1]; return v ? ` (${v})` : ''; };
-const varSel = p => [['tailles', 'Taille', 'sz'], ['couleurs', 'Couleur', 'co']].map(([k, l, id]) => p[k] ? `<label>${l}</label><select id="${id}">${p[k].split(',').map(t => `<option>${esc(t.trim())}</option>`).join('')}</select>` : '').join('');
+const varSel = p => [['tailles', 'Taille', 'sz'], ['couleurs', 'Couleur', 'co'], ['fils', 'Couleur de broderie', 'fi']].map(([k, l, id]) => p[k] ? `<label>${l}</label><select id="${id}">${p[k].split(',').map(t => `<option>${esc(t.trim())}</option>`).join('')}</select>` : '').join('') + (p.perso ? `<label>${esc(p.perso)}</label><textarea id="pe" rows="2" maxlength="120" placeholder="Ex. : Dr Nom Prénom, Faculté de Médecine Oran, 2026"></textarea>` : '');
 
 function fee(w, sub) {
   const s = S.settings; if (+s.free_above > 0 && sub >= +s.free_above) return 0;
@@ -62,8 +62,9 @@ const views = {
       ${varSel(p)}${p.stock > 0 ? `<div class="qty"><button id="m">−</button><span id="n">1</span><button id="pl">+</button></div><p><button class="btn" id="buy">Acheter maintenant</button><button class="btn dark" id="add">Ajouter au panier</button></p>` : ''}
       ${wa ? `<a class="btn line" target="_blank" rel="noopener" href="https://wa.me/${esc(wa)}?text=${encodeURIComponent('Bonjour, je suis intéressé par : ' + p.name)}"> Poser une question sur WhatsApp</a>` : ''}
       <p> Livraison 58 wilayas ·  Paiement à la livraison</p></div></div>`;
-    const vr = () => [$('#sz')?.value, $('#co')?.value].filter(Boolean).join(' / '); let n = 1; const set = v => { n = Math.max(1, Math.min(p.stock, v)); $('#n').textContent = n; };
-    if (p.stock > 0) { $('#m').onclick = () => set(n - 1); $('#pl').onclick = () => set(n + 1); $('#add').onclick = () => { addCart(p, n, vr()); $('#add').textContent = '✔ Ajouté'; }; $('#buy').onclick = () => { addCart(p, n, vr()); location.hash = '#/checkout'; }; }
+    const vr = () => [['sz', 'Taille'], ['co', 'Couleur'], ['fi', 'Broderie']].map(([id, l]) => $('#' + id) ? l + ' ' + $('#' + id).value : '').concat($('#pe') ? ['Texte : ' + $('#pe').value.replace(/["<>&~]/g, ' ').trim()] : []).filter(Boolean).join(' / ');
+    const okp = () => !$('#pe') || $('#pe').value.trim() ? true : (alert('Merci d\u2019écrire le texte à broder (nom, faculté, année).'), $('#pe').focus(), false); let n = 1; const set = v => { n = Math.max(1, Math.min(p.stock, v)); $('#n').textContent = n; };
+    if (p.stock > 0) { $('#m').onclick = () => set(n - 1); $('#pl').onclick = () => set(n + 1); $('#add').onclick = () => { if (!okp()) return; addCart(p, n, vr()); $('#add').textContent = '✔ Ajouté'; }; $('#buy').onclick = () => { if (!okp()) return; addCart(p, n, vr()); location.hash = '#/checkout'; }; }
   },
   cart() {
     const ids = Object.keys(cart).filter(i => pid(i)); const sub = ids.reduce((a, i) => a + price(pid(i)) * cart[i], 0);
